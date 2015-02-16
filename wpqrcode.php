@@ -4,7 +4,7 @@
 	Plugin URI: http://www.superbcodes.com/
 	Description: This allows user to add a widget that generates QrCode for every page dynamically. Whenever a visitor visits the site the widget will show qrcode for current page that the visitor is visiting. User can add the widget with and without title, define the size of the qrcode, fill color and background color. If the user finds that widget is not working because of any problem with theme user can add custom HTML tag before and after the widget. Multiple widgets can be added same time.
 	Tags: Qrcode,Dynamic,Widget,Canvas,Image,Html5
-	Version: 1.0.1
+	Version: 1.0.2
 	Author:	Nazmul Hossain Nihal
 	Author URI: http://www.SuperbCodes.com/
 	License: GPLv2 or later
@@ -54,12 +54,12 @@
 				<label for="<?php echo $this->get_field_id( 'size' ); ?>"><?php _e( 'Size: (in pixels)' ); ?></label> 
 				<input class="widefat" id="<?php echo $this->get_field_id( 'size' ); ?>" name="<?php echo $this->get_field_name( 'size' ); ?>" type="text" value="<?php echo esc_attr( $size ); ?>">
 				
-				<label for="<?php echo $this->get_field_id( 'fill' ); ?>"><?php _e( 'Fill:' ); ?></label>
-				<input class="widefat color {hash:true}" id="<?php echo $this->get_field_id( 'fill' ); ?>" name="<?php echo $this->get_field_name( 'fill' ); ?>" type="text" value="<?php echo esc_attr( $fill ); ?>">
-				
-				<label for="<?php echo $this->get_field_id( 'background' ); ?>"><?php _e( 'Background:' ); ?></label> 
-				<input class="widefat color {hash:true}" id="<?php echo $this->get_field_id( 'background' ); ?>" name="<?php echo $this->get_field_name( 'background' ); ?>" type="text" value="<?php echo esc_attr( $background ); ?>">
-				
+				<label for="<?php echo $this->get_field_id( 'fill' ); ?>"><?php _e( 'Fill:' ); ?></label> <br />
+				<input class="widefat color" id="<?php echo $this->get_field_id( 'fill' ); ?>" name="<?php echo $this->get_field_name( 'fill' ); ?>" type="text" value="<?php echo esc_attr( $fill ); ?>">
+				<br />
+				<label for="<?php echo $this->get_field_id( 'background' ); ?>"><?php _e( 'Background:' ); ?></label><br /> 
+				<input class="widefat color" id="<?php echo $this->get_field_id( 'background' ); ?>" name="<?php echo $this->get_field_name( 'background' ); ?>" type="text" value="<?php echo esc_attr( $background ); ?>">
+				<br />
 				<label for="<?php echo $this->get_field_id( 'min' ); ?>"><?php _e( 'Min Version:' ); ?></label> 
 				<select class="widefat" id="<?php echo $this->get_field_id( 'min' ); ?>" name="<?php echo $this->get_field_name( 'min' ); ?>">
 				  <?php
@@ -157,6 +157,16 @@
 	}
 	
 	add_action( 'widgets_init', 'register_WpQrCode' );
+	
+	
+	function wpqrcode_add_color_picker( $hook ) {
+	 
+		if( is_admin() ) {   
+			wp_enqueue_style( 'wp-color-picker' ); 
+			wp_enqueue_script( 'custom-script-handle', plugins_url( 'js/jscolor.js', __FILE__ ), array( 'wp-color-picker' ), false, true ); 
+		}
+	}
+	add_action( 'admin_enqueue_scripts', 'wpqrcode_add_color_picker' );
 	
 	function wpqrcode_scripts() {
 		wp_enqueue_script('custom-script-1',  plugins_url('js/script.js', __FILE__), array('scriptaculous'));

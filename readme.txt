@@ -3,7 +3,7 @@ Contributors: nazmul.hossain.nihal
 Tags: Qrcode,Dynamic,Widget,Canvas,Image,Html5
 Requires at least: 3.5 
 Tested up to: 4.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FYMPLJ69H9EM6
@@ -37,8 +37,13 @@ Note: Don't change "wpqrcode" directory name
 * Plugin Created
 = 1.0.1 =
 * Color Picker Disabled
+= 1.0.2 =
+* WordPress Default ColorPicker added
 
-== Update Notice ==
+== Upgrade Notice ==
 
 = 1.0.1 =
 * Color Picker Disabled because of an error.Update is not necessary.If you want you can use the plugin with version 1.0
+
+= 1.0.1 =
+* ColorPicker was disabled on 1.0.1.Now on the version 1.0.2 the default colorpicker of wordpress has been added.
