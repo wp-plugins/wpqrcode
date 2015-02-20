@@ -4,7 +4,7 @@
 	Plugin URI: http://www.superbcodes.com/
 	Description: This allows user to add a widget that generates QrCode for every page dynamically. Whenever a visitor visits the site the widget will show qrcode for current page that the visitor is visiting. User can add the widget with and without title, define the size of the qrcode, fill color and background color. If the user finds that widget is not working because of any problem with theme user can add custom HTML tag before and after the widget. Multiple widgets can be added same time.
 	Tags: Qrcode,Dynamic,Widget,Canvas,Image,Html5
-	Version: 1.0.2
+	Version: 1.0.3
 	Author:	Nazmul Hossain Nihal
 	Author URI: http://www.SuperbCodes.com/
 	License: GPLv2 or later
@@ -55,10 +55,10 @@
 				<input class="widefat" id="<?php echo $this->get_field_id( 'size' ); ?>" name="<?php echo $this->get_field_name( 'size' ); ?>" type="text" value="<?php echo esc_attr( $size ); ?>">
 				
 				<label for="<?php echo $this->get_field_id( 'fill' ); ?>"><?php _e( 'Fill:' ); ?></label> <br />
-				<input class="widefat color" id="<?php echo $this->get_field_id( 'fill' ); ?>" name="<?php echo $this->get_field_name( 'fill' ); ?>" type="text" value="<?php echo esc_attr( $fill ); ?>">
+				<input class="widefat wpqrcode-colorpicker" id="<?php echo $this->get_field_id( 'fill' ); ?>" name="<?php echo $this->get_field_name( 'fill' ); ?>" type="text" value="<?php echo esc_attr( $fill ); ?>">
 				<br />
 				<label for="<?php echo $this->get_field_id( 'background' ); ?>"><?php _e( 'Background:' ); ?></label><br /> 
-				<input class="widefat color" id="<?php echo $this->get_field_id( 'background' ); ?>" name="<?php echo $this->get_field_name( 'background' ); ?>" type="text" value="<?php echo esc_attr( $background ); ?>">
+				<input class="widefat wpqrcode-colorpicker" id="<?php echo $this->get_field_id( 'background' ); ?>" name="<?php echo $this->get_field_name( 'background' ); ?>" type="text" value="<?php echo esc_attr( $background ); ?>">
 				<br />
 				<label for="<?php echo $this->get_field_id( 'min' ); ?>"><?php _e( 'Min Version:' ); ?></label> 
 				<select class="widefat" id="<?php echo $this->get_field_id( 'min' ); ?>" name="<?php echo $this->get_field_name( 'min' ); ?>">
